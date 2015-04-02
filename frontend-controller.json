@@ -1,0 +1,27 @@
+{
+  "id": "frontend-controller",
+  "kind": "ReplicationController",
+  "apiVersion": "v1beta1",
+  "desiredState": {
+    "replicas": 3,
+    "replicaSelector": {"name": "frontend"},
+    "podTemplate": {
+      "desiredState": {
+         "manifest": {
+           "version": "v1beta1",
+           "id": "frontend",
+           "containers": [{
+             "name": "deepshare",
+             "image": "misingularity/deepshare",
+             "ports": [{"name": "http-server", "containerPort": 8080}]
+           }]
+         }
+       },
+       "labels": {
+         "name": "frontend",
+         "uses": "redis-slave-or-redis-master",
+         "app": "frontend"
+       }
+      }},
+  "labels": {"name": "frontend"}
+}
