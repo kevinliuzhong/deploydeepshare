@@ -1,0 +1,28 @@
+{
+  "id": "deepshare-controller",
+  "kind": "ReplicationController",
+  "apiVersion": "v1beta1",
+  "desiredState": {
+    "replicas": 2,
+    "replicaSelector": {"name": "deepshare"},
+    "podTemplate": {
+      "desiredState": {
+         "manifest": {
+           "version": "v1beta1",
+           "id": "deepshare-controller",
+           "containers": [{
+             "name": "deepshare",
+             "image": "misingularity/deepshare",
+             "cpu": 100,
+             "memory": 50000000,
+             "ports": [{"containerPort": 8080, "hostPort": 8080}]
+           }]
+         }
+       },
+       "labels": {
+         "name": "deepshare",
+         "uses": "redis-slave,redis-master"
+       }
+      }},
+  "labels": {"name": "deepshare"}
+}
