@@ -1,15 +1,15 @@
 {
-  "id": "frontend-controller",
+  "id": "deepshare-controller",
   "kind": "ReplicationController",
   "apiVersion": "v1beta1",
   "desiredState": {
-    "replicas": 3,
-    "replicaSelector": {"name": "frontend"},
+    "replicas": 4,
+    "replicaSelector": {"name": "deepshare"},
     "podTemplate": {
       "desiredState": {
          "manifest": {
            "version": "v1beta1",
-           "id": "frontend-controller",
+           "id": "deepshare-controller",
            "containers": [{
              "name": "deepshare",
              "image": "misingularity/deepshare",
@@ -20,9 +20,9 @@
          }
        },
        "labels": {
-         "name": "frontend",
-         "uses": "redisslave,redis-master"
+         "name": "deepshare",
+         "uses": "redis-slave,redis-master"
        }
       }},
-  "labels": {"name": "frontend"}
+  "labels": {"name": "deepshare"}
 }

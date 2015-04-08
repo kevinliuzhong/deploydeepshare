@@ -1,13 +1,13 @@
 {
-  "id": "frontend",
+  "id": "deepshare",
   "kind": "Service",
   "apiVersion": "v1beta1",
   "port": 80,
   "containerPort": 8080,
   "selector": {
-    "name": "frontend"
+    "name": "deepshare"
   },
   "labels": {
-    "name": "frontend"
+    "name": "deepshare"
   }
 }
