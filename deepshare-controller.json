@@ -13,15 +13,13 @@
            "containers": [{
              "name": "deepshare",
              "image": "misingularity/deepshare",
-             "cpu": 100,
-             "memory": 50000000,
              "ports": [{"containerPort": 8080, "hostPort": 8080}]
            }]
          }
        },
        "labels": {
          "name": "deepshare",
-         "uses": "redis-slave,redis-master"
+         "uses": "redisslave,redis-master"
        }
       }},
   "labels": {"name": "deepshare"}
