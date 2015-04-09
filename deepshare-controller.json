@@ -12,7 +12,7 @@
            "id": "deepshare-controller",
            "containers": [{
              "name": "deepshare",
-             "image": "misingularity/deepshare",
+             "image": "misingularity/deepshare-dev",
              "ports": [{"containerPort": 8080, "hostPort": 8080}]
            }]
          }
