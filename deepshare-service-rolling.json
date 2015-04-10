@@ -6,7 +6,7 @@
   "containerPort": 8080,
   "publicIPs":["172.18.0.13", "172.18.0.14"],
   "selector": {
-    "name": "deepshare"
+    "name": "deepshare-rolling"
   },
   "labels": {
     "name": "deepshare"
