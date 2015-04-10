@@ -2,10 +2,11 @@
   "id": "deepshare",
   "kind": "Service",
   "apiVersion": "v1beta1",
-  "port": 80,
+  "port": 8080,
   "containerPort": 8080,
+  "publicIPs":["172.18.0.13", "172.18.0.14"],
   "selector": {
-    "name": "deepshare"
+    "name": "deepshare-rolling"
   },
   "labels": {
     "name": "deepshare"
