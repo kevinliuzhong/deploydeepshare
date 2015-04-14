@@ -10,10 +10,12 @@
         "manifest": {
           "version": "v1beta1",
           "id": "redis-master",
+          "volumes":[{"name":"redis-data", "source":{"hostDir":{"path":"/tmp/redis"}}}],
           "containers": [{
             "name": "redis-master",
             "image": "dockerfile/redis",
-            "ports": [{"containerPort": 6379}]
+            "ports": [{"containerPort": 6379}],
+            "volumeMounts": [{"name": "redis-data", "mountPath": "/data"}]
           }]
         }
       },

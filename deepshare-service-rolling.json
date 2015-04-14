@@ -1,5 +1,5 @@
 {
-  "id": "deepshare",
+  "id": "deepshare-rolling",
   "kind": "Service",
   "apiVersion": "v1beta1",
   "port": 8080,
@@ -9,6 +9,6 @@
     "name": "deepshare-rolling"
   },
   "labels": {
-    "name": "deepshare"
+    "name": "deepshare-rolling"
   }
 }
