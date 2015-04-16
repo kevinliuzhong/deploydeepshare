@@ -1,0 +1,14 @@
+{
+  "id": "deepshare-8000",
+  "kind": "Service",
+  "apiVersion": "v1beta1",
+  "port": 8000,
+  "containerPort": 8000,
+  "publicIPs":["172.18.0.13", "172.18.0.14"],
+  "selector": {
+    "app": "deepshare"
+  },
+  "labels": {
+    "name": "deepshare-8000"
+  }
+}
