@@ -1,12 +1,12 @@
 {
-  "id": "redis-master",
+  "id": "redis-master-test",
   "kind": "Pod",
   "apiVersion": "v1beta1",
   "desiredState": {
     "manifest": {
       "version": "v1beta1",
-      "id": "redis-master",
-      "volumes":[{"name":"redis-data", "source":{"hostDir":{"path":"/tmp/redis"}}}],
+      "id": "redis-master-test",
+      "volumes":[{"name":"redis-data", "source":{"hostDir":{"path":"/tmp/redis-test"}}}],
       "containers": [{
         "name": "master",
         "image": "dockerfile/redis",
@@ -20,7 +20,7 @@
     }
   },
   "labels": {
-    "name": "redis-master"
+    "name": "redis-master-test"
   }
 }
     
