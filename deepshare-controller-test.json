@@ -1,30 +1,30 @@
 {
-  "id": "deepshare-controller-test",
+  "id": "deepshare-controller",
   "kind": "ReplicationController",
   "apiVersion": "v1beta1",
   "desiredState": {
     "replicas": 2,
-    "replicaSelector": {"name": "deepshare-test"},
+    "replicaSelector": {"name": "deepshare"},
     "podTemplate": {
       "desiredState": {
          "manifest": {
            "version": "v1beta1",
-           "id": "deepshare-controller-test",
-           "volumes":[{"name":"logfile", "source":{"hostDir":{"path":"/tmp/logtest"}}}],
+           "id": "deepshare-controller",
+           "volumes":[{"name":"logfile", "source":{"hostDir":{"path":"/tmp/log"}}}],
            "containers": [{
              "name": "deepshare",
              "image": "misingularity/deepshare:k8s1.0.5",
              "ports": [{"containerPort": 8080}, {"containerPort": 8000}],
-             "env": [{"name":"_DEEPSHARE_URL_BASE_HOST", "value":"http://fds.so"},{"name":"_DEEPSHARE_URL_BASE_PORT", "value":"8081"}],
+             "env": [{"name":"_DEEPSHARE_URL_BASE_HOST", "value":"http://t.fds.so"},{"name":"_DEEPSHARE_URL_BASE_PORT", "value":"8080"}],
              "volumeMounts": [{"name": "logfile", "mountPath": "/tmp"}]
            }]
          }
        },
        "labels": {
-         "name": "deepshare-test",
-         "app": "deepshare-test",
-         "uses": "redis-master-test"
+         "name": "deepshare",
+         "app": "deepshare",
+         "uses": "redis-master"
        }
       }},
-  "labels": {"name": "deepshare-test"}
+  "labels": {"name": "deepshare"}
 }
