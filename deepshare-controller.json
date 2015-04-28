@@ -13,7 +13,7 @@
            "volumes":[{"name":"logfile", "source":{"hostDir":{"path":"/tmp/log"}}}],
            "containers": [{
              "name": "deepshare",
-             "image": "misingularity/deepshare:k8s1.0.5",
+             "image": "misingularity/deepshare:k8s1.0.7",
              "ports": [{"containerPort": 8080}, {"containerPort": 8000}],
              "env": [{"name":"_DEEPSHARE_URL_BASE_HOST", "value":"http://fds.so"},{"name":"_DEEPSHARE_URL_BASE_PORT", "value":"8080"}],
              "volumeMounts": [{"name": "logfile", "mountPath": "/tmp"}]
@@ -23,7 +23,7 @@
        "labels": {
          "name": "deepshare",
          "app": "deepshare",
-         "uses": "redis-slave,redis-master"
+         "uses": "redis-master"
        }
       }},
   "labels": {"name": "deepshare"}

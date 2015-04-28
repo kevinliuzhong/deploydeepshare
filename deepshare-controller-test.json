@@ -15,7 +15,7 @@
              "name": "deepshare",
              "image": "misingularity/deepshare:k8s1.0.5",
              "ports": [{"containerPort": 8080}, {"containerPort": 8000}],
-             "env": [{"name":"_DEEPSHARE_URL_BASE_HOST", "value":"http://t.fds.so"},{"name":"_DEEPSHARE_URL_BASE_PORT", "value":"8080"}],
+             "env": [{"name":"_DEEPSHARE_URL_BASE_HOST", "value":"http://kube-abedfd98d55af4.chinacloudapp.cn"},{"name":"_DEEPSHARE_URL_BASE_PORT", "value":"8080"}],
              "volumeMounts": [{"name": "logfile", "mountPath": "/tmp"}]
            }]
          }

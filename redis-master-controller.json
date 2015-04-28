@@ -15,7 +15,7 @@
             "name": "redis-master",
             "image": "dockerfiles/redis",
             "ports": [{"containerPort": 6379}],
-            "volumeMounts": [{"name": "redis-data", "mountPath": "/data"}]
+            "volumeMounts": [{"name": "redis-data", "mountPath": "/redis-data"}]
           }]
         }
       },
