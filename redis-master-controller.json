@@ -13,7 +13,7 @@
           "volumes":[{"name":"redis-data", "source":{"hostDir":{"path":"/tmp/redis"}}}],
           "containers": [{
             "name": "redis-master",
-            "image": "dockerfiles/redis",
+            "image": "qdco.chinacloudapp.cn:5000/redis",
             "ports": [{"containerPort": 6379}],
             "volumeMounts": [{"name": "redis-data", "mountPath": "/redis-data"}]
           }]

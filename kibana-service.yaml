@@ -1,0 +1,11 @@
+apiVersion: v1beta1
+kind: Service
+id: kibana-logging
+containerPort: 80
+port: 5601
+publicIPs: [172.18.0.13, 172.18.0.14]
+labels:
+  name: kibana-logging
+  kubernetes.io/cluster-service: "true"
+selector:
+  name: kibana-logging
